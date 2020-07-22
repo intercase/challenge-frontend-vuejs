@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div
-      class="col-12 col-md-3"
+      class="col-12 col-md-4 col-xl-3 mb-4"
       v-for="(movie, index) in movies"
       :key="index"
     >
@@ -13,11 +13,11 @@
           alt="Card image cap"
         >
         <div class="card-body">
-          <h5 class="card-title">{{ movie.title }}</h5>
+          <h5 class="card-title text">{{ movie.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">Popularidade: {{ movie.popularity }}</h6>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Data de lançamento:
+            {{ movie.release_date }}
           </p>
           <a href="#" class="card-link">Saber mais</a>
         </div>
@@ -40,3 +40,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+</style>
