@@ -13,8 +13,12 @@
           alt="Card image cap"
         >
         <div class="card-body">
-          <h5 class="card-title text">{{ movie.title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Popularidade: {{ movie.popularity }}</h6>
+          <h5 class="card-title strip-text">
+            {{ movie.title }}
+          </h5>
+          <p class="card-subtitle mb-2 text-muted">
+            Votos: {{ movie.vote_count }}
+          </p>
           <p class="card-text">
             Data de lançamento:
             {{ movie.release_date }}
@@ -35,14 +39,11 @@ export default {
       required: true,
     },
   },
-  created() {
-    console.log(this.$props.movies);
-  },
 };
 </script>
 
 <style scoped>
-.text {
+.strip-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

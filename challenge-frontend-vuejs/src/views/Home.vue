@@ -1,50 +1,43 @@
 <template>
   <div class="container">
-    <h1 class="mb-5 text-center">Bem vindo!</h1>
-    <p>Selecione o tipo de pesquisa que você quer realizar:</p>
-    <div class="input-group">
-      <select
-        class="custom-select"
-        id="type"
-        ref="type"
-        aria-label="Opções para fazer a pesquisa"
-        @change="setSelectedOption()"
-      >
-        <option selected>Selecione...</option>
-        <option value="1">Filme</option>
-        <option value="2">Programa de TV</option>
-      </select>
-      <div class="input-group-append">
-        <button
-          class="btn btn-dark"
-          type="button"
-          @click="search()"
-        >
-          Pesquisar
-        </button>
+    <span class="text-center">
+      <h1 class="mt-5 font-weight-bold">Bem vindo!</h1>
+      <p>Encontre os melhores filmes e séries em um só lugar &#x1F600;</p>
+    </span>
+    <div class="row mt-3">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">Séries &#x1F39E;</h5>
+            <p class="card-text">
+              Encontre as melhores séries de todos os tempos, com base no
+              <strong>seu gosto</strong> e ano!
+            </p>
+            <a href="/pesquisar/series" class="btn btn-warning">Pesquisar Séries</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 mt-2 mt-md-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">Filmes &#x1F3A5;</h5>
+            <p class="card-text">
+              Que tal achar milhares de filmes renomados, com base no
+              <strong>seu gosto</strong> e ano?
+            </p>
+            <a href="/pesquisar/filmes" class="btn btn-warning">Pesquisar Filmes</a>
+          </div>
+        </div>
       </div>
     </div>
-    <MovieCard class="mt-5" :movies="this.movies" />
-    <Pagination />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import MovieCard from './MovieCard.vue';
-import Pagination from '../components/Pagination.vue';
 
 export default {
   name: 'Home',
-  data() {
-    return {
-      selectedOption: null,
-    };
-  },
-  components: {
-    MovieCard,
-    Pagination,
-  },
   computed: {
     ...mapState({
       movies: (state) => state.movie.movies,
