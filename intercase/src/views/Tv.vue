@@ -7,6 +7,8 @@
             :title="tv.title"
             :text="tv.overview"
             :image="tv.poster_path"
+            :popularity="tv.popularity"
+            :rate="tv.vote_average"
             @click="$router.push(`series/${tv.id}`)"
           ></app-card>
         </div>

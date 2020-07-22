@@ -3,7 +3,7 @@
     <img :src="image" class="card-img-top" alt="..." />
     <div class="card-body flex-fill">
       <h5 class="card-title">{{title}}</h5>
-      <h6>{{date}}</h6>
+      <h6>{{getDate(date)}}</h6>
       <p class="card-text mb-4">{{text}}</p>
       <span>
         <i class="fas fa-fire"></i>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   props: {
     title: {
@@ -37,6 +38,12 @@ export default {
     },
     rate: {
       type: Number
+    }
+  },
+
+  methods:{
+    getDate(date){
+      return moment(date).format('DD.MM.YYYY')
     }
   }
 };

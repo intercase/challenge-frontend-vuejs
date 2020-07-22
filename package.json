@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.19.2",
+    "moment": "^2.27.0",
     "vue-loading-overlay": "^3.3.2"
   }
 }
