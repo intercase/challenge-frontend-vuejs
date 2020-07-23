@@ -1,3 +1,4 @@
 export default {
-  tvShows: null,
+  series: null,
+  genres: null,
 };

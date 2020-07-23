@@ -1,5 +1,5 @@
 export default {
   getTvShowsData({ state }) {
-    return state.tvShows;
+    return state.series;
   },
 };

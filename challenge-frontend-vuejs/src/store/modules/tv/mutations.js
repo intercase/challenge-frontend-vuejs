@@ -1,5 +1,8 @@
 export default {
-  setTvShowsData(state, tvShows) {
-    state.tvShows = tvShows;
+  setSeriesData(state, series) {
+    state.series = series;
+  },
+  setGenresData(state, genres) {
+    state.genres = genres;
   },
 };
