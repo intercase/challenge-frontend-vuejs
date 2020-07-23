@@ -15,7 +15,7 @@
         {{info.vote_average}}|10
       </div>
       <div class="col-12 d-flex justify-content-center">
-        <h1>{{info.title ? info.tittle : info.name}}</h1>
+        <h1>{{info.title ? info.title : info.name}}</h1>
       </div>
       <div class="col-12">
         <p class="overview">{{info.overview}}</p>
