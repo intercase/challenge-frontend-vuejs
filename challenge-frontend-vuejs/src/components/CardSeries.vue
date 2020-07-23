@@ -23,7 +23,9 @@
             Média:
             {{ serie.vote_average }}
           </p>
-          <a href="#" class="card-link">Saber mais</a>
+          <router-link :to="`/saber-mais/serie/${serie.id}`" class="card-link">
+            Saber mais
+          </router-link>
         </div>
       </div>
     </div>

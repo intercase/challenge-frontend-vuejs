@@ -28,4 +28,13 @@ export default {
         console.log(error);
       });
   },
+  loadSeriesDetails({ commit }, id) {
+    api.get(`/media/tv/${id}`)
+      .then((response) => {
+        commit('setSerieDetails', response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };

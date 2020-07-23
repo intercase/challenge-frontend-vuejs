@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="text-center mt-5">
+      <BackButton :toPath="'/pesquisar/filmes'" class="mb-2" />
+    </div>
     <div class="row my-5">
       <div class="col-12 col-md-5">
         <img
@@ -45,9 +48,13 @@
 
 <script>
 import { mapState } from 'vuex';
+import BackButton from '../../components/BackButton.vue';
 
 export default {
   props: ['id'],
+  components: {
+    BackButton,
+  },
   computed: {
     ...mapState({
       movieDetails: (state) => state.movie.movieDetails,

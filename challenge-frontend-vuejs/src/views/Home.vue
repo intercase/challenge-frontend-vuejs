@@ -13,7 +13,9 @@
               Encontre as melhores séries de todos os tempos, com base no
               <strong>seu gosto</strong> e ano!
             </p>
-            <a href="/pesquisar/series" class="btn btn-warning">Pesquisar Séries</a>
+            <router-link to="/pesquisar/series" class="btn btn-warning">
+              Pesquisar Séries
+            </router-link>
           </div>
         </div>
       </div>
@@ -25,7 +27,9 @@
               Que tal achar milhares de filmes renomados, com base no
               <strong>seu gosto</strong> e ano?
             </p>
-            <a href="/pesquisar/filmes" class="btn btn-warning">Pesquisar Filmes</a>
+            <router-link to="/pesquisar/filmes" class="btn btn-warning">
+              Pesquisar Filmes
+            </router-link>
           </div>
         </div>
       </div>
