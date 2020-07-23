@@ -11,6 +11,7 @@
           :src="movie.poster_path"
           height="50px"
           alt="Card image cap"
+          style="height: 200px"
         >
         <div class="card-body">
           <h5 class="card-title strip-text">
