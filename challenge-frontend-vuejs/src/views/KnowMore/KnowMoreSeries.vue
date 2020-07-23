@@ -13,7 +13,9 @@
       </div>
       <div class="col-12 col-md-7">
         <div class="text-center">
-          <h1 class="font-weight-bold">{{ serieDetails.name }}</h1>
+          <h1 class="font-weight-bold mt-4 mt-md-0">
+            {{ serieDetails.name }}
+          </h1>
           <div class="mb-4">
              <span
               class="badge badge-dark mr-1"

@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h2 class="mt-5 mb-2 font-weight-bold">Séries</h2>
+    <h2 class="my-5 font-weight-bold display-2 text-center">
+      <span class="underline">Séries</span>
+    </h2>
     <div class="row align-items-end">
       <div class="col-12 col-md-6">
         <div>
@@ -44,7 +46,7 @@
             type="button"
             @click="search()"
           >
-            Pesquisar
+             &#x1F50D; Pesquisar
           </button>
         </div>
       </div>
@@ -101,3 +103,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.underline {
+  border-bottom: 8px solid #ffc107;
+}
+</style>

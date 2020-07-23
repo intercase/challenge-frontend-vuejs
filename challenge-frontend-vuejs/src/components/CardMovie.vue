@@ -13,7 +13,7 @@
           style="height: 200px"
         >
         <div class="card-body">
-          <h5 class="card-title strip-text">
+          <h5 class="card-title strip-text font-weight-bold">
             {{ movie.title }}
           </h5>
           <p class="card-subtitle mb-2 text-muted">
