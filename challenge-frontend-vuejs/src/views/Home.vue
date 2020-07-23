@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="container">
     <span class="text-center">
       <h1 class="mt-5 font-weight-bold">Bem vindo!</h1>
@@ -35,6 +36,8 @@
       </div>
     </div>
   </div>
+</div>
+
 </template>
 
 <script>

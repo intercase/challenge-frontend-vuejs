@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 
-// import Cards from '../components/Cards.vue';
+// All components
 import Full from '../components/Full.vue';
 import Search from '../views/Search/Search.vue';
 import SearchMovies from '../views/Search/SearchMovies.vue';
@@ -18,9 +18,10 @@ const routes = [
     path: '/',
     name: 'Full',
     component: Full,
+    redirect: 'home',
     children: [
       {
-        path: '/',
+        path: '/home',
         name: 'Home',
         component: Home,
       },

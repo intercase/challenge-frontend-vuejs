@@ -56,17 +56,35 @@
       :series="this.series"
       class="mt-5"
     />
-    <Pagination
-      v-if="this.series !== null"
-      class="my-5"
-    />
+    <nav v-if="this.series !== null" aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <button
+            type="button"
+            :disabled="Fields.page === 1"
+            class="btn btn-outline-warning"
+            @click="goTo(Fields.page - 1)"
+          >
+            <span>&laquo; Anterior</span>
+          </button>
+        </li>
+        <li class="page-item">
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            @click="goTo(Fields.page + 1)"
+          >
+            <span>Próximo &raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import CardSeries from '../../components/CardSeries.vue';
-import Pagination from '../../components/Pagination.vue';
 
 export default {
   name: 'SearchSeries',
@@ -80,7 +98,6 @@ export default {
     };
   },
   components: {
-    Pagination,
     CardSeries,
   },
   created() {
@@ -99,6 +116,14 @@ export default {
       } else {
         this.$store.dispatch('tv/search', this.Fields.page);
       }
+    },
+    goTo(page) {
+      this.Fields.page = page;
+      this.search();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     },
   },
 };
