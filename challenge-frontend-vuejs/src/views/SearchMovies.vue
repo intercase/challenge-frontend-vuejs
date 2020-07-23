@@ -4,13 +4,14 @@
     <div class="row align-items-end">
       <div class="col-12 col-md-6">
         <div>
-          <label for="txtYear">Gênero desejado:</label>
+          <label for="txtYear">Gênero:</label>
           <select
             class="custom-select"
             id="type"
             ref="type"
             aria-label="Opções para fazer a pesquisa"
             v-model="Fields.genre"
+            @change="search()"
           >
             <option selected value="">Selecione um gênero...</option>
             <option
@@ -34,6 +35,7 @@
               class="form-control"
               placeholder="Digite o ano desejado"
               aria-label="Campo para digitar o ano desejado"
+              @keydown.enter="search()"
             >
           </div>
         </div>
@@ -73,8 +75,8 @@ export default {
     return {
       Fields: {
         page: 1,
-        genre: null,
-        year: null,
+        genre: '',
+        year: '',
       },
     };
   },
@@ -94,10 +96,10 @@ export default {
   },
   methods: {
     search() {
-      if (this.Fields.genre !== null || this.Fields.year !== null) {
+      if (this.Fields.genre !== '' || this.Fields.year !== '') {
         this.$store.dispatch('movie/searchByGenre', this.Fields);
       } else {
-        this.$store.dispatch('movie/search', this.Fields);
+        this.$store.dispatch('movie/search', this.Fields.page);
       }
     },
   },
