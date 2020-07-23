@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 button {
   background-color: transparent;
   border: 1px solid;
