@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'movie-card',
+  name: 'SerieCard',
   props: {
     series: {
       type: Array,

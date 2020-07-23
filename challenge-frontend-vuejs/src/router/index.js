@@ -4,9 +4,9 @@ import Home from '../views/Home.vue';
 
 // import Cards from '../components/Cards.vue';
 import Full from '../components/Full.vue';
-import Search from '../views/Search.vue';
-import SearchMovies from '../views/SearchMovies.vue';
-import SearchTv from '../views/SearchSeries.vue';
+import Search from '../views/Search/Search.vue';
+import SearchMovies from '../views/Search/SearchMovies.vue';
+import SearchTv from '../views/Search/SearchSeries.vue';
 import KnowMore from '../views/KnowMore/KnowMore.vue';
 import KnowMoreMovies from '../views/KnowMore/KnowMoreMovies.vue';
 import KnowMoreSeries from '../views/KnowMore/KnowMoreSeries.vue';

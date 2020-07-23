@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'movie-card',
+  name: 'MovieCard',
   props: {
     movies: {
       type: Array,

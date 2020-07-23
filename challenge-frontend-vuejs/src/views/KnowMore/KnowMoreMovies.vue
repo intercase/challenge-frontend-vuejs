@@ -51,6 +51,7 @@ import { mapState } from 'vuex';
 import BackButton from '../../components/BackButton.vue';
 
 export default {
+  name: 'KnowMoreMovies',
   props: ['id'],
   components: {
     BackButton,

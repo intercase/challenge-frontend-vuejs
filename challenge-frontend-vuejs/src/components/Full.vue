@@ -11,6 +11,7 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 
 export default {
+  name: 'Full',
   componentes: {
     Header,
     Footer,

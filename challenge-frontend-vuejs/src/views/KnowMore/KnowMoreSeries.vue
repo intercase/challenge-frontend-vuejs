@@ -48,6 +48,7 @@ import { mapState } from 'vuex';
 import BackButton from '../../components/BackButton.vue';
 
 export default {
+  name: 'KnowMoreSeries',
   props: ['id'],
   components: {
     BackButton,

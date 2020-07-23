@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'BackButton',
   props: {
     toPath: {
       type: String,

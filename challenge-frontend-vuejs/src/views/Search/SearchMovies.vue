@@ -1,15 +1,13 @@
 <template>
   <div class="container">
-    <h2 class="mt-5 mb-2 font-weight-bold">Séries</h2>
+    <h2 class="mt-5 mb-2 font-weight-bold">Filmes</h2>
     <div class="row align-items-end">
       <div class="col-12 col-md-6">
         <div>
           <label for="txtYear">Gênero:</label>
           <select
             class="custom-select"
-            id="type"
             ref="type"
-            aria-label="Opções para fazer a pesquisa"
             v-model="Fields.genre"
             @change="search()"
           >
@@ -29,12 +27,10 @@
           <label for="txtYear">Ano:</label>
           <div class="input-group">
             <input
-              id="txtYear"
               v-model="Fields.year"
-              type="text"
+              type="number"
               class="form-control"
               placeholder="Digite o ano desejado"
-              aria-label="Campo para digitar o ano desejado"
               @keydown.enter="search()"
             >
           </div>
@@ -52,13 +48,13 @@
         </div>
       </div>
     </div>
-    <CardSeries
-      v-if="this.series !== null"
-      :series="this.series"
+    <CardMovie
+      v-if="this.movies !== null"
+      :movies="this.movies"
       class="mt-5"
     />
     <Pagination
-      v-if="this.series !== null"
+      v-if="this.movies !== null"
       class="my-5"
     />
   </div>
@@ -66,11 +62,11 @@
 
 <script>
 import { mapState } from 'vuex';
-import CardSeries from '../components/CardSeries.vue';
-import Pagination from '../components/Pagination.vue';
+import CardMovie from '../../components/CardMovie.vue';
+import Pagination from '../../components/Pagination.vue';
 
 export default {
-  name: 'Home',
+  name: 'SearchMovies',
   data() {
     return {
       Fields: {
@@ -82,24 +78,23 @@ export default {
   },
   components: {
     Pagination,
-    CardSeries,
+    CardMovie,
   },
   created() {
-    this.$store.dispatch('tv/loadGenres');
+    this.$store.dispatch('movie/loadGenres');
   },
-
   computed: {
     ...mapState({
-      series: (state) => state.tv.series,
-      genres: (state) => state.tv.genres,
+      movies: (state) => state.movie.movies,
+      genres: (state) => state.movie.genres,
     }),
   },
   methods: {
     search() {
       if (this.Fields.genre !== '' || this.Fields.year !== '') {
-        this.$store.dispatch('tv/searchByGenre', this.Fields);
+        this.$store.dispatch('movie/searchByGenre', this.Fields);
       } else {
-        this.$store.dispatch('tv/search', this.Fields.page);
+        this.$store.dispatch('movie/search', this.Fields.page);
       }
     },
   },

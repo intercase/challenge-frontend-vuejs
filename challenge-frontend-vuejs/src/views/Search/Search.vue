@@ -10,9 +10,10 @@
 </template>
 
 <script>
-import BackButton from '../components/BackButton.vue';
+import BackButton from '../../components/BackButton.vue';
 
 export default {
+  name: 'Search',
   components: {
     BackButton,
   },
