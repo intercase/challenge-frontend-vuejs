@@ -28,4 +28,13 @@ export default {
         console.log(error);
       });
   },
+  loadMovieDetails({ commit }, id) {
+    api.get(`/media/movie/${id}`)
+      .then((response) => {
+        commit('setMovieDetails', response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };

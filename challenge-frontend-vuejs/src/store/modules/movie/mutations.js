@@ -5,4 +5,7 @@ export default {
   setGenresData(state, genres) {
     state.genres = genres;
   },
+  setMovieDetails(state, details) {
+    state.movieDetails = details;
+  },
 };

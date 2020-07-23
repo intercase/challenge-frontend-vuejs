@@ -6,7 +6,10 @@ import Home from '../views/Home.vue';
 import Full from '../components/Full.vue';
 import Search from '../views/Search.vue';
 import SearchMovies from '../views/SearchMovies.vue';
-import SearchTv from '../views/SearchTv.vue';
+import SearchTv from '../views/SearchSeries.vue';
+import KnowMore from '../views/KnowMore/KnowMore.vue';
+import KnowMoreMovies from '../views/KnowMore/KnowMoreMovies.vue';
+import KnowMoreSeries from '../views/KnowMore/KnowMoreSeries.vue';
 
 Vue.use(VueRouter);
 
@@ -35,6 +38,25 @@ const routes = [
             path: 'series',
             name: 'TV',
             component: SearchTv,
+          },
+        ],
+      },
+      {
+        path: '/saber-mais/',
+        name: 'KnowMore',
+        component: KnowMore,
+        children: [
+          {
+            path: 'filme/:id',
+            name: 'KnowMoreMovies',
+            component: KnowMoreMovies,
+            props: true,
+          },
+          {
+            path: 'serie/:id',
+            name: 'KnowMoreSeries',
+            component: KnowMoreSeries,
+            props: true,
           },
         ],
       },

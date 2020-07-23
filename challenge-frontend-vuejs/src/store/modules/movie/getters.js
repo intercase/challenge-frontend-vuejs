@@ -5,4 +5,7 @@ export default {
   getGenresData({ state }) {
     return state.genres;
   },
+  getMovieDetails({ state }) {
+    return state.movieDetails;
+  },
 };

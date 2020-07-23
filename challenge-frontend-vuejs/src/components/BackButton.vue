@@ -1,11 +1,11 @@
 <template>
   <div>
-    <a
-      :href="toPath"
+    <router-link
+      :to="toPath"
       class="btn btn-dark font-weight-bold"
     >
       &#x02190; Voltar
-    </a>
+    </router-link>
   </div>
 </template>
 

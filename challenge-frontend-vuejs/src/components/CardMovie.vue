@@ -9,7 +9,6 @@
         <img
           class="card-img-top img-fluid"
           :src="movie.poster_path"
-          height="50px"
           alt="Card image cap"
           style="height: 200px"
         >
@@ -24,7 +23,9 @@
             Data de lançamento:
             {{ movie.release_date }}
           </p>
-          <a href="#" class="card-link">Saber mais</a>
+          <router-link :to="`/saber-mais/filme/${movie.id}`" class="card-link">
+            Saber mais
+          </router-link>
         </div>
       </div>
     </div>
