@@ -4,9 +4,10 @@
         ref="detailsModal"
         size="xl"
         :title="dataIn['title']"
+        ok-only
     >
         <movies-details :index="dataIn['id']" v-if="typeMovies"/>
-        <series-details v-if="typeSeries"/>
+        <series-details :index="dataIn['id']" v-if="typeSeries"/>
     </b-modal>
 </template>
 <script>
@@ -29,7 +30,7 @@ export default {
         show() {
             this.$refs.detailsModal.show()
             this.typeMovies = this.type == 'movie'
-            this.typeSeries = this.type == 'tv'
+            this.typeSeries = this.type == 'serie'
         }
 	}
 }

@@ -1,9 +1,9 @@
 <template>
 	<b-tabs content-class="mt-3">
-		<b-tab title="Movies" active>
+		<b-tab title="Filmes" active>
 			<movies-list />
 		</b-tab>
-		<b-tab title="Series">
+		<b-tab title="Séries">
 			<series-list />
 		</b-tab>
 	</b-tabs>

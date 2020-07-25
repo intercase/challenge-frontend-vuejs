@@ -116,7 +116,7 @@
         <Details
             id="detailsModal"
             ref="detailsModal"
-            :dataIn="indexDetailsModal"
+            :dataIn="detailsModal"
             :type="'movie'"
         />
     </div>
@@ -134,7 +134,7 @@ export default {
             movies: [],
             indexOverview: -1,
             detailsModalOpen: false,
-            indexDetailsModal: -1
+            detailsModal: -1
         }
     },
     methods: {
@@ -146,7 +146,7 @@ export default {
             this.indexOverview = index
         },
         openDetails(index) {
-            this.indexDetailsModal = index
+            this.detailsModal = index
             this.detailsModalOpen = true
             this.$refs.detailsModal.show()
         },
